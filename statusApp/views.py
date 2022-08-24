@@ -8,7 +8,10 @@ def predictor(request):
         id=request.POST['id']
         entid=request.POST['entid']
         founded=datetime.strptime(request.POST['founded'], '%Y-%m-%d').year
-        closed=datetime.strptime(request.POST['closed'], '%Y-%m-%d').year
+        if(request.POST['closed']==""):
+            closed=2021
+        else:
+            closed=datetime.strptime(request.POST['closed'], '%Y-%m-%d').year
         investmentrounds=request.POST['investmentrounds']
         fundingrounds=request.POST['fundingrounds']
         fundingtotal=request.POST['fundingtotal']
@@ -20,6 +23,7 @@ def predictor(request):
         age=request.POST['age']
         categorycode=request.POST['categorycode']
         countrycode=request.POST['countrycode']
+        
         if(countrycode=='AUS'):
             country_code_AUS=1
             country_code_CAN=0
