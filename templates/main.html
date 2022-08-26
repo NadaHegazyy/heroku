@@ -4,9 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equic="X-UA-Compatible" content="IEedge">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
-            body {background-color: powderblue;}
-            h1   {color: blue;}
+            button{cursor: pointer;}
+            body{margin-left: 100px;margin-right: 100px;}
+            h1   {color: rgb(31, 31, 217); text-align: center; font-weight: bold;}
+            label{margin-left:50px;float: left;color:rgb(5, 5, 139);font-weight: bold;grid-column: 1 / 2}
+            input{float:right;width:150px;border-color:rgb(5, 5, 139) ;grid-column: 2 / 3;}
+            select{float: right;width:160px; border-color: rgb(5, 5, 139);}
+            form {align-items: center;height: 100vh;display: grid;grid-template-columns: auto auto auto; grid-gap: 16px;}
+            div{display: block;align-items: center;justify-content: center;}
+            input[type=submit]{background-color: #0d72d1;border: none;border-radius: 5px;color: white;padding: 10px 20px;
+             text-decoration: none;width:100px;height:40px;cursor: pointer;font-size: 17px;}
         </style>
         <title>Prediction of a startup's status</title>
     </head>
@@ -18,22 +27,24 @@
             {% if result %}
             <h1>The status of the company you are trying to predict is {{result}}</h1> 
             {% endif %}
+            <div>
             <form action="" method='POST'>
                 {% csrf_token %}
-                ID: <input type="number" name="id" required><br><br>
-                Entity ID: <input type="number" name="entid" required><br><br>
-                Founded at: <input type="date" name="founded" required><br><br>
-                Closed at: <input type="date" name="closed"><br><br>
-                Investment Rounds: <input type="number" name="investmentrounds" required><br><br>
-                Funding Rounds: <input type="number" name="fundingrounds" required><br><br>
-                Funding Total USD: <input type="number" name="fundingtotal" required><br><br>
-                Milestones: <input type="number" name="milestones" required><br><br>
-                Relationships: <input type="number" name="relationship" required><br><br>
-                Created at: <input type="date" name="created" required><br><br>
-                Updated at: <input type="date" name="updated" required><br><br>
-                Return On Investments: <input type="number" name="roi" required><br><br>
-                Company's age: <input type="number" name="age" required><br><br>
-                Category Code: <select name="categorycode" id="cat">
+                <p>
+                <label> ID:</label> <input type="number" name="id" required></p> 
+                <p><label> Entity ID: </label> <input type="number" name="entid" required></p>
+                <p><label> Founded at:</label>  <input type="date" name="founded" required></p>
+                <p><label> Closed at: </label> <input type="date" name="closed"></p> 
+                <p><label> Investment Rounds: </label> <input type="number" name="investmentrounds" required></p> 
+                <p><label>Funding Rounds: </label> <input type="number" name="fundingrounds" required></p> 
+                <p><label> Funding Total USD:</label>  <input type="number" name="fundingtotal" required></p> 
+                <p><label>Milestones: </label> <input type="number" name="milestones" required></p> 
+                <p><label>Relationships:</label>  <input type="number" name="relationship" required></p> 
+                <p><label>Created at:</label>  <input type="date" name="created" required></p> 
+                <p><label>Updated at:</label>  <input type="date" name="updated" required></p> 
+                <p><label>Return On Investments: </label> <input type="number" name="roi" required></p> 
+                <p><label>Company's age:</label>  <input type="number" name="age" required></p> 
+                <p><label>Category Code:</label>  <select name="categorycode" id="cat">
                     <option value="advertising">Advertising</option>
                     <option value="biotech">Bio Tech</option>
                     <option value="consulting">Consulting</option>
@@ -44,8 +55,8 @@
                     <option value="software">Software</option>
                     <option value="web">Web</option>
                     <option value="other">Other</option>
-                  </select><br><br>
-                  Country Code: <select name="countrycode" id="con">
+                  </select></p> 
+                  <p><label>  Country Code:</label> <select name="countrycode" id="con">
                     <option value="AUS">AUS</option>
                     <option value="CAN">CAN</option>
                     <option value="DEU">DEU</option>
@@ -57,10 +68,17 @@
                     <option value="NLD">NLD</option>
                     <option value="USA">USA</option>
                     <option value="other">Other</option>
-                  </select><br><br>
+                  </select></p> 
+                  <div>
                   <input type="submit">
-            </form><br>
-            https://git.heroku.com/cryptic-shelf-79507.git
+                  </div>
+            </div>
+            </form> 
+            
+                <button>
+                    <a href="https://github.com/NadaHegazyy/heroku.git"></a> <i class="fa fa-github" style="font-size:36px"></i></a>
+                  </button>
+        
         
             
     
